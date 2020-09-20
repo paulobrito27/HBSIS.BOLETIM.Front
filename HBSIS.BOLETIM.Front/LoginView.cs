@@ -43,6 +43,10 @@ namespace HBSIS.BOLETIM.Front
                 {
                     t1 = new Thread(JanelaAluno);
                 }
+                if (user.TipoUsuario == TipoUsuarioEnum.ADMINISTRADOR)
+                {
+                    t1 = new Thread(JanelaAdministrador);
+                }
 
                 t1.SetApartmentState(ApartmentState.STA);
                 t1.Start();
@@ -57,6 +61,11 @@ namespace HBSIS.BOLETIM.Front
         private void JanelaAluno(object obj)
         {
             Application.Run(new AlunoView(user) );
+        }
+
+        private void JanelaAdministrador(object obj)
+        {
+            Application.Run(new AdministradorView(user));
         }
     }
 }
