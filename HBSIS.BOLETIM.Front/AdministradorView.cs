@@ -1,4 +1,5 @@
-﻿using PROJETO_HBSIS.BOLETIM.MODELS;
+﻿using HBSIS.BOLETIM.Front.Adiministrador;
+using PROJETO_HBSIS.BOLETIM.MODELS;
 using System;
 using System.Threading;
 using System.Windows.Forms;
@@ -16,6 +17,36 @@ namespace HBSIS.BOLETIM.Front
 
         private void btn_Entrar_Click(object sender, EventArgs e)
         {
+            string texto = "";
+            if (comboBox.SelectedItem != null)
+            {
+               texto = comboBox.SelectedItem.ToString();
+            }
+            if(texto == "Cadastrar Curso")
+            {
+                CadastroCursoView cad = new CadastroCursoView();
+                cad.Show();
+            }
+            if (texto == "Cadastrar Materia")
+            {
+                CadastraMateriaView cad = new CadastraMateriaView();
+                cad.Show();
+            }
+            if (texto == "Cadastrar Aluno")
+            {
+                CadastraAlunoView cad = new CadastraAlunoView();
+                cad.Show();
+            }
+            if (texto == "Matricular Aluno em Curso")
+            {
+                MatAlunoCursoView  cad= new MatAlunoCursoView();
+                cad.Show();
+            }
+            if (texto == "Matricular Aluno em Materia")
+            {
+                MatAlunoMateriaView cad = new MatAlunoMateriaView();
+                cad.Show();
+            }
            
         }
 
@@ -26,7 +57,6 @@ namespace HBSIS.BOLETIM.Front
             t1.SetApartmentState(ApartmentState.STA);
             t1.Start();
         }
-
 
         private void JanelaLogin(object obj)
         {

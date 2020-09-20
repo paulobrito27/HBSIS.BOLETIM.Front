@@ -49,6 +49,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adiministrador\CadastraAlunoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adiministrador\CadastraAlunoView.Designer.cs">
+      <DependentUpon>CadastraAlunoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adiministrador\CadastraMateriaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adiministrador\CadastraMateriaView.Designer.cs">
+      <DependentUpon>CadastraMateriaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adiministrador\CadastroCursoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adiministrador\CadastroCursoView.Designer.cs">
+      <DependentUpon>CadastroCursoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adiministrador\MatAlunoCursoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adiministrador\MatAlunoCursoView.Designer.cs">
+      <DependentUpon>MatAlunoCursoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Adiministrador\MatAlunoMateriaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adiministrador\MatAlunoMateriaView.Designer.cs">
+      <DependentUpon>MatAlunoMateriaView.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdministradorView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +99,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Adiministrador\CadastroCursoView.resx">
+      <DependentUpon>CadastroCursoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Adiministrador\MatAlunoCursoView.resx">
+      <DependentUpon>MatAlunoCursoView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdministradorView.resx">
       <DependentUpon>AdministradorView.cs</DependentUpon>
     </EmbeddedResource>
