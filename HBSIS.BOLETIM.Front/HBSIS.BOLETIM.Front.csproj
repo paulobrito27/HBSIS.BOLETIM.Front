@@ -99,6 +99,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Adiministrador\CadastraAlunoView.resx">
+      <DependentUpon>CadastraAlunoView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Adiministrador\CadastraMateriaView.resx">
       <DependentUpon>CadastraMateriaView.cs</DependentUpon>
     </EmbeddedResource>
