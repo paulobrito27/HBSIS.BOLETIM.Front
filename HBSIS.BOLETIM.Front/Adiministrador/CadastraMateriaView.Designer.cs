@@ -45,6 +45,8 @@
             this.lbl_erro3 = new System.Windows.Forms.Label();
             this.lbl_erro2 = new System.Windows.Forms.Label();
             this.lbl_erro1 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_id = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -151,9 +153,9 @@
             // 
             // btn_deletar
             // 
-            this.btn_deletar.Location = new System.Drawing.Point(42, 571);
+            this.btn_deletar.Location = new System.Drawing.Point(219, 699);
             this.btn_deletar.Name = "btn_deletar";
-            this.btn_deletar.Size = new System.Drawing.Size(262, 38);
+            this.btn_deletar.Size = new System.Drawing.Size(152, 38);
             this.btn_deletar.TabIndex = 11;
             this.btn_deletar.Text = "DELETAR";
             this.btn_deletar.UseVisualStyleBackColor = true;
@@ -161,9 +163,9 @@
             // 
             // btn_alterar
             // 
-            this.btn_alterar.Location = new System.Drawing.Point(42, 640);
+            this.btn_alterar.Location = new System.Drawing.Point(12, 699);
             this.btn_alterar.Name = "btn_alterar";
-            this.btn_alterar.Size = new System.Drawing.Size(262, 38);
+            this.btn_alterar.Size = new System.Drawing.Size(152, 38);
             this.btn_alterar.TabIndex = 12;
             this.btn_alterar.Text = "ALTERAR";
             this.btn_alterar.UseVisualStyleBackColor = true;
@@ -175,7 +177,7 @@
             this.lbl_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_ok.Location = new System.Drawing.Point(515, 609);
             this.lbl_ok.Name = "lbl_ok";
-            this.lbl_ok.Size = new System.Drawing.Size(0, 25);
+            this.lbl_ok.Size = new System.Drawing.Size(0, 20);
             this.lbl_ok.TabIndex = 13;
             // 
             // lbl_erro3
@@ -184,7 +186,7 @@
             this.lbl_erro3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_erro3.Location = new System.Drawing.Point(515, 727);
             this.lbl_erro3.Name = "lbl_erro3";
-            this.lbl_erro3.Size = new System.Drawing.Size(0, 25);
+            this.lbl_erro3.Size = new System.Drawing.Size(0, 20);
             this.lbl_erro3.TabIndex = 14;
             // 
             // lbl_erro2
@@ -193,7 +195,7 @@
             this.lbl_erro2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_erro2.Location = new System.Drawing.Point(515, 685);
             this.lbl_erro2.Name = "lbl_erro2";
-            this.lbl_erro2.Size = new System.Drawing.Size(0, 25);
+            this.lbl_erro2.Size = new System.Drawing.Size(0, 20);
             this.lbl_erro2.TabIndex = 15;
             // 
             // lbl_erro1
@@ -202,14 +204,34 @@
             this.lbl_erro1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_erro1.Location = new System.Drawing.Point(515, 648);
             this.lbl_erro1.Name = "lbl_erro1";
-            this.lbl_erro1.Size = new System.Drawing.Size(0, 25);
+            this.lbl_erro1.Size = new System.Drawing.Size(0, 20);
             this.lbl_erro1.TabIndex = 16;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(5, 595);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(292, 25);
+            this.label6.TabIndex = 17;
+            this.label6.Text = "Informe Id para alterar ou deletar";
+            // 
+            // txt_id
+            // 
+            this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_id.Location = new System.Drawing.Point(10, 623);
+            this.txt_id.Name = "txt_id";
+            this.txt_id.Size = new System.Drawing.Size(103, 30);
+            this.txt_id.TabIndex = 18;
             // 
             // CadastraMateriaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(999, 820);
+            this.Controls.Add(this.txt_id);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lbl_erro1);
             this.Controls.Add(this.lbl_erro2);
             this.Controls.Add(this.lbl_erro3);
@@ -253,5 +275,7 @@
         private System.Windows.Forms.Label lbl_erro3;
         private System.Windows.Forms.Label lbl_erro2;
         private System.Windows.Forms.Label lbl_erro1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt_id;
     }
 }
