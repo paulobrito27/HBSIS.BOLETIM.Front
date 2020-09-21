@@ -159,33 +159,86 @@ namespace HBSIS.BOLETIM.Front.Adiministrador
             comboBox.Items.Add("Inativo");
             comboBox.Items.Add("Ativo");
 
-
             //=======
             var client = new HttpClient();
-            client.BaseAddress = new Uri("https://localhost:44303/");
-            var request = client.GetAsync("Materias");
-            request.Wait();
-            var result = request.Result.Content.ReadAsStringAsync();
-            var resultado = JsonConvert.DeserializeObject<PadraoResult<Materia>>(result.Result);
-
-            if (!resultado.Error)
+            using (client)
             {
-                listView1.Items.Clear();
+                client.BaseAddress = new Uri("https://localhost:44303/");
+                var request = client.GetAsync("Materias");
+                request.Wait();
+                var result = request.Result.Content.ReadAsStringAsync();
+                var resultado = JsonConvert.DeserializeObject<PadraoResult<Materia>>(result.Result);
 
-                foreach (var item in resultado.Data)
+                if (!resultado.Error)
                 {
-                    string id = item.Id.ToString();
-                    listView1.Items.Add($"Id {id.PadRight(5, '.')}.{item.Nome.PadRight(25, '.')}.({item.Situacao})");
+                    listaMateria.Items.Clear();
+                    comboMateria.Items.Clear();
+                    foreach (var item in resultado.Data)
+                    {
+
+                        listaMateria.Items.Add($"{item.Id} - {item.Nome} [{item.Situacao}]");
+                        comboMateria.Items.Add(item.Nome);
+                    }
+
+                }
+                else if (resultado.Data.Count == 0)
+                {
+                    listaMateria.Items.Add("Não existe Disciplinas cadastradas na base de dados");
+                }
+                else
+                {
+                    listaMateria.Items.Add(resultado.Message[0]);
                 }
 
             }
-            else if (resultado.Data.Count == 0)
+
+            var client2 = new HttpClient();
+            using (client2)
             {
-                listView1.Items.Add("Não existe Disciplinas cadastradas na base de dados");
+                client2.BaseAddress = new Uri("https://localhost:44303/");
+                var request2 = client2.GetAsync("Cursos");
+                request2.Wait();
+                var result2 = request2.Result.Content.ReadAsStringAsync();
+                var resultado2 = JsonConvert.DeserializeObject<PadraoResult<Curso>>(result2.Result);
+
+                if (!resultado2.Error)
+                {
+                    comboCurso.Items.Clear();
+
+                    foreach (var curso in resultado2.Data)
+                    {
+                        comboCurso.Items.Add($"{curso.Nome}");
+                    }
+                }
+
+            }  
+
+        }
+
+        private void btn_vincula_Click(object sender, EventArgs e)
+        {
+            (string, string) dados;
+
+            dados.Item1 = comboCurso.SelectedItem.ToString();
+            dados.Item2 = comboMateria.SelectedItem.ToString();
+
+            var client = new HttpClient();
+            client.BaseAddress = new Uri("https://localhost:44303/");
+            var request = client.PostAsync("Cursos/AddMateria", new StringContent(JsonConvert.SerializeObject(dados), System.Text.Encoding.UTF8, "application/json"));
+            request.Wait();
+            var result = request.Result.Content.ReadAsStringAsync();
+            var resultado = JsonConvert.DeserializeObject<PadraoResult<Curso>>(result.Result);
+
+            if (resultado.Error)
+            {
+                lbl_erro1.Text = resultado.Message[0];
+                lbl_erro2.Text = resultado.Message.Count > 1 ? resultado.Message[1] : "";
+                lbl_erro3.Text = resultado.Message.Count > 2 ? resultado.Message[2] : "";
             }
             else
             {
-                listView1.Items.Add(resultado.Message[0]);
+                lbl_ok.Text = $"Materia  vinculada!";
+                PopularDados();
             }
         }
     }

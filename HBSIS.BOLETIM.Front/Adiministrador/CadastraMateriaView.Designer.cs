@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listaMateria = new System.Windows.Forms.ListView();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -47,33 +47,38 @@
             this.lbl_erro1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_id = new System.Windows.Forms.TextBox();
+            this.comboCurso = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btn_vincula = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboMateria = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 41);
+            this.label1.Location = new System.Drawing.Point(693, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(228, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Lista de disciplinas";
             // 
-            // listView1
+            // listaMateria
             // 
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(42, 102);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(311, 443);
-            this.listView1.TabIndex = 1;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.List;
+            this.listaMateria.HideSelection = false;
+            this.listaMateria.Location = new System.Drawing.Point(698, 95);
+            this.listaMateria.Name = "listaMateria";
+            this.listaMateria.Size = new System.Drawing.Size(311, 443);
+            this.listaMateria.TabIndex = 1;
+            this.listaMateria.UseCompatibleStateImageBehavior = false;
+            this.listaMateria.View = System.Windows.Forms.View.List;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(403, 76);
+            this.label2.Location = new System.Drawing.Point(34, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 25);
             this.label2.TabIndex = 2;
@@ -83,7 +88,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(403, 136);
+            this.label3.Location = new System.Drawing.Point(34, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(99, 25);
             this.label3.TabIndex = 3;
@@ -93,7 +98,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(625, 272);
+            this.label4.Location = new System.Drawing.Point(256, 252);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(53, 25);
             this.label4.TabIndex = 4;
@@ -103,7 +108,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(403, 272);
+            this.label5.Location = new System.Drawing.Point(34, 252);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 25);
             this.label5.TabIndex = 5;
@@ -112,7 +117,7 @@
             // txt_nome
             // 
             this.txt_nome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nome.Location = new System.Drawing.Point(519, 76);
+            this.txt_nome.Location = new System.Drawing.Point(150, 56);
             this.txt_nome.Name = "txt_nome";
             this.txt_nome.Size = new System.Drawing.Size(380, 30);
             this.txt_nome.TabIndex = 6;
@@ -120,7 +125,7 @@
             // txt_descricao
             // 
             this.txt_descricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_descricao.Location = new System.Drawing.Point(519, 133);
+            this.txt_descricao.Location = new System.Drawing.Point(150, 113);
             this.txt_descricao.Multiline = true;
             this.txt_descricao.Name = "txt_descricao";
             this.txt_descricao.Size = new System.Drawing.Size(380, 117);
@@ -128,7 +133,7 @@
             // 
             // calendar
             // 
-            this.calendar.Location = new System.Drawing.Point(630, 306);
+            this.calendar.Location = new System.Drawing.Point(261, 286);
             this.calendar.Name = "calendar";
             this.calendar.TabIndex = 8;
             // 
@@ -136,16 +141,16 @@
             // 
             this.comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox.FormattingEnabled = true;
-            this.comboBox.Location = new System.Drawing.Point(409, 306);
+            this.comboBox.Location = new System.Drawing.Point(40, 286);
             this.comboBox.Name = "comboBox";
             this.comboBox.Size = new System.Drawing.Size(194, 33);
             this.comboBox.TabIndex = 9;
             // 
             // btn_cadastrar
             // 
-            this.btn_cadastrar.Location = new System.Drawing.Point(630, 550);
+            this.btn_cadastrar.Location = new System.Drawing.Point(29, 455);
             this.btn_cadastrar.Name = "btn_cadastrar";
-            this.btn_cadastrar.Size = new System.Drawing.Size(262, 38);
+            this.btn_cadastrar.Size = new System.Drawing.Size(187, 38);
             this.btn_cadastrar.TabIndex = 10;
             this.btn_cadastrar.Text = "CADASTRAR";
             this.btn_cadastrar.UseVisualStyleBackColor = true;
@@ -153,7 +158,7 @@
             // 
             // btn_deletar
             // 
-            this.btn_deletar.Location = new System.Drawing.Point(219, 699);
+            this.btn_deletar.Location = new System.Drawing.Point(1072, 211);
             this.btn_deletar.Name = "btn_deletar";
             this.btn_deletar.Size = new System.Drawing.Size(152, 38);
             this.btn_deletar.TabIndex = 11;
@@ -163,7 +168,7 @@
             // 
             // btn_alterar
             // 
-            this.btn_alterar.Location = new System.Drawing.Point(12, 699);
+            this.btn_alterar.Location = new System.Drawing.Point(1072, 150);
             this.btn_alterar.Name = "btn_alterar";
             this.btn_alterar.Size = new System.Drawing.Size(152, 38);
             this.btn_alterar.TabIndex = 12;
@@ -175,7 +180,7 @@
             // 
             this.lbl_ok.AutoSize = true;
             this.lbl_ok.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_ok.Location = new System.Drawing.Point(515, 609);
+            this.lbl_ok.Location = new System.Drawing.Point(146, 589);
             this.lbl_ok.Name = "lbl_ok";
             this.lbl_ok.Size = new System.Drawing.Size(0, 20);
             this.lbl_ok.TabIndex = 13;
@@ -211,7 +216,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(5, 595);
+            this.label6.Location = new System.Drawing.Point(1058, 52);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(292, 25);
             this.label6.TabIndex = 17;
@@ -220,16 +225,69 @@
             // txt_id
             // 
             this.txt_id.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_id.Location = new System.Drawing.Point(10, 623);
+            this.txt_id.Location = new System.Drawing.Point(1072, 95);
             this.txt_id.Name = "txt_id";
             this.txt_id.Size = new System.Drawing.Size(103, 30);
             this.txt_id.TabIndex = 18;
+            // 
+            // comboCurso
+            // 
+            this.comboCurso.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboCurso.FormattingEnabled = true;
+            this.comboCurso.Location = new System.Drawing.Point(1316, 439);
+            this.comboCurso.Name = "comboCurso";
+            this.comboCurso.Size = new System.Drawing.Size(360, 33);
+            this.comboCurso.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(1319, 395);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 25);
+            this.label7.TabIndex = 19;
+            this.label7.Text = "Cursos";
+            // 
+            // btn_vincula
+            // 
+            this.btn_vincula.Location = new System.Drawing.Point(1524, 685);
+            this.btn_vincula.Name = "btn_vincula";
+            this.btn_vincula.Size = new System.Drawing.Size(152, 38);
+            this.btn_vincula.TabIndex = 21;
+            this.btn_vincula.Text = "VINCULAR MATERIA";
+            this.btn_vincula.UseVisualStyleBackColor = true;
+            this.btn_vincula.Click += new System.EventHandler(this.btn_vincula_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(1319, 522);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(109, 31);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Materias";
+            // 
+            // comboMateria
+            // 
+            this.comboMateria.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboMateria.FormattingEnabled = true;
+            this.comboMateria.Location = new System.Drawing.Point(1316, 565);
+            this.comboMateria.Name = "comboMateria";
+            this.comboMateria.Size = new System.Drawing.Size(360, 33);
+            this.comboMateria.TabIndex = 23;
             // 
             // CadastraMateriaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1233, 820);
+            this.ClientSize = new System.Drawing.Size(1688, 820);
+            this.Controls.Add(this.comboMateria);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.btn_vincula);
+            this.Controls.Add(this.comboCurso);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_id);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.lbl_erro1);
@@ -247,7 +305,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listaMateria);
             this.Controls.Add(this.label1);
             this.Name = "CadastraMateriaView";
             this.Text = "Cadastro de materias";
@@ -259,7 +317,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listaMateria;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
@@ -277,5 +335,10 @@
         private System.Windows.Forms.Label lbl_erro1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_id;
+        private System.Windows.Forms.ComboBox comboCurso;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btn_vincula;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ComboBox comboMateria;
     }
 }
