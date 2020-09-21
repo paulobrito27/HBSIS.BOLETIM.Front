@@ -111,6 +111,9 @@
     <EmbeddedResource Include="Adiministrador\MatAlunoCursoView.resx">
       <DependentUpon>MatAlunoCursoView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Adiministrador\MatAlunoMateriaView.resx">
+      <DependentUpon>MatAlunoMateriaView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdministradorView.resx">
       <DependentUpon>AdministradorView.cs</DependentUpon>
     </EmbeddedResource>
