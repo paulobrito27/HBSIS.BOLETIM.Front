@@ -97,6 +97,12 @@
     <Compile Include="LoginView.Designer.cs">
       <DependentUpon>LoginView.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProfessorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProfessorView.Designer.cs">
+      <DependentUpon>ProfessorView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Adiministrador\CadastraAlunoView.resx">
@@ -122,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoginView.resx">
       <DependentUpon>LoginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfessorView.resx">
+      <DependentUpon>ProfessorView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

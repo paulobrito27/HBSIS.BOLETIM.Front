@@ -47,7 +47,7 @@
             // 
             // btn_Entrar
             // 
-            this.btn_Entrar.Location = new System.Drawing.Point(65, 356);
+            this.btn_Entrar.Location = new System.Drawing.Point(65, 306);
             this.btn_Entrar.Name = "btn_Entrar";
             this.btn_Entrar.Size = new System.Drawing.Size(151, 30);
             this.btn_Entrar.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(131, 30);
+            this.label1.Location = new System.Drawing.Point(416, 28);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(285, 29);
             this.label1.TabIndex = 2;
@@ -67,7 +67,7 @@
             // 
             // btn_Voltar
             // 
-            this.btn_Voltar.Location = new System.Drawing.Point(65, 450);
+            this.btn_Voltar.Location = new System.Drawing.Point(975, 476);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(151, 30);
             this.btn_Voltar.TabIndex = 3;
@@ -90,7 +90,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
-            this.ClientSize = new System.Drawing.Size(525, 528);
+            this.ClientSize = new System.Drawing.Size(1160, 528);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.label1);
