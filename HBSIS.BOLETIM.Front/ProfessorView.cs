@@ -88,10 +88,19 @@ namespace HBSIS.BOLETIM.Front
 
                 Aluno aluno = listaAlunos.Where(q => q.Id == id).FirstOrDefault();
 
-                foreach (var materia in aluno.Curso.Materias)
+                if( aluno.Curso != null && aluno.Curso.Materias.Count > 0)
                 {
-                    boxMateria.Items.Add($"{materia.Materia.Id}: {materia.Materia.Nome}");
+                    foreach (var materia in aluno.Curso.Materias)
+                    {
+                        boxMateria.Items.Add($"{materia.Materia.Id}: {materia.Materia.Nome}");
+                    }
                 }
+                else
+                {
+                    lbl_erro1.Text = "Aluno não esta matriculado em nenhuma materia";
+                }
+
+               
             }
             else
             {
