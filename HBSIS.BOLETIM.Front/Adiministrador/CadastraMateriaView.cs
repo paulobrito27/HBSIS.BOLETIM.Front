@@ -44,6 +44,7 @@ namespace HBSIS.BOLETIM.Front.Adiministrador
                 var request = client.PostAsync("Materias/Cadastrar", new StringContent(JsonConvert.SerializeObject(materia), System.Text.Encoding.UTF8, "application/json"));
                 request.Wait();
                 var result = request.Result.Content.ReadAsStringAsync();
+                result.Wait();
                 var resultado = JsonConvert.DeserializeObject<PadraoResult<Materia>>(result.Result);
 
                 if (resultado.Error)
@@ -82,6 +83,7 @@ namespace HBSIS.BOLETIM.Front.Adiministrador
                 var request = client.PostAsync("Materias/Deletar", new StringContent(JsonConvert.SerializeObject(materia), System.Text.Encoding.UTF8, "application/json"));
                 request.Wait();
                 var result = request.Result.Content.ReadAsStringAsync();
+                result.Wait();
                 var resultado = JsonConvert.DeserializeObject<PadraoResult<Materia>>(result.Result);
 
                 if (resultado.Error)
@@ -135,6 +137,7 @@ namespace HBSIS.BOLETIM.Front.Adiministrador
                     var request = client.PostAsync("Materias/Alterar", new StringContent(JsonConvert.SerializeObject(materia), System.Text.Encoding.UTF8, "application/json"));
                     request.Wait();
                     var result = request.Result.Content.ReadAsStringAsync();
+                    result.Wait();
                     var resultado = JsonConvert.DeserializeObject<PadraoResult<Materia>>(result.Result);
 
                     if (resultado.Error)
@@ -177,6 +180,7 @@ namespace HBSIS.BOLETIM.Front.Adiministrador
                 var request = client.GetAsync("Materias");
                 request.Wait();
                 var result = request.Result.Content.ReadAsStringAsync();
+                result.Wait();
                 var resultado = JsonConvert.DeserializeObject<PadraoResult<Materia>>(result.Result);
 
                 if (!resultado.Error)
@@ -209,6 +213,7 @@ namespace HBSIS.BOLETIM.Front.Adiministrador
                 var request2 = client2.GetAsync("Cursos");
                 request2.Wait();
                 var result2 = request2.Result.Content.ReadAsStringAsync();
+                result2.Wait();
                 var resultado2 = JsonConvert.DeserializeObject<PadraoResult<Curso>>(result2.Result);
 
                 if (!resultado2.Error)
@@ -240,6 +245,7 @@ namespace HBSIS.BOLETIM.Front.Adiministrador
                 var request = client.PostAsync("Cursos/AddMateria", new StringContent(JsonConvert.SerializeObject(dados), System.Text.Encoding.UTF8, "application/json"));
                 request.Wait();
                 var result = request.Result.Content.ReadAsStringAsync();
+                result.Wait();
                 var resultado = JsonConvert.DeserializeObject<PadraoResult<Curso>>(result.Result);
 
                 if (resultado.Error)

@@ -42,6 +42,7 @@ namespace HBSIS.BOLETIM.Front.Adiministrador
                 var request = client.PostAsync("Alunos/MatricularAlunoEmCurso", new StringContent(JsonConvert.SerializeObject(aluno), System.Text.Encoding.UTF8, "application/json"));
                 request.Wait();
                 var result = request.Result.Content.ReadAsStringAsync();
+                result.Wait();
                 var resultado = JsonConvert.DeserializeObject<PadraoResult<Aluno>>(result.Result);
 
                 if (resultado.Error)
@@ -71,6 +72,7 @@ namespace HBSIS.BOLETIM.Front.Adiministrador
             var request = client.GetAsync("Alunos");
             request.Wait();
             var result = request.Result.Content.ReadAsStringAsync();
+            result.Wait();
             var resultado = JsonConvert.DeserializeObject<PadraoResult<Aluno>>(result.Result);
             if (resultado.Error)
             {
@@ -88,6 +90,7 @@ namespace HBSIS.BOLETIM.Front.Adiministrador
             request = client.GetAsync("Cursos");
             request.Wait();
             result = request.Result.Content.ReadAsStringAsync();
+            result.Wait();
             var resultado2 = JsonConvert.DeserializeObject<PadraoResult<Curso>>(result.Result);
             if (resultado2.Error)
             {

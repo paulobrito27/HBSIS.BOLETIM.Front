@@ -1,17 +1,8 @@
 ﻿using Newtonsoft.Json;
 using PROJETO_HBSIS.BOLETIM.MODELS;
-using PROJETO_HBSIS.BOLETIM.MODELS.ClassesAssociativas;
 using PROJETO_HBSIS.BOLETIM.MODELS.RESULTS;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Http;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HBSIS.BOLETIM.Front.Adiministrador
@@ -32,6 +23,7 @@ namespace HBSIS.BOLETIM.Front.Adiministrador
             var request = client.GetAsync("Alunos");
             request.Wait();
             var result = request.Result.Content.ReadAsStringAsync();
+            result.Wait();
             var resultado = JsonConvert.DeserializeObject<PadraoResult<Aluno>>(result.Result);
 
             box_Aluno.Items.Clear();
@@ -47,6 +39,7 @@ namespace HBSIS.BOLETIM.Front.Adiministrador
             request = client.GetAsync("Materias");
             request.Wait();
             result = request.Result.Content.ReadAsStringAsync();
+            result.Wait();
             var resultado2 = JsonConvert.DeserializeObject<PadraoResult<Materia>>(result.Result);
 
             box_Materia.Items.Clear();
@@ -77,6 +70,7 @@ namespace HBSIS.BOLETIM.Front.Adiministrador
             var request = client.PostAsync("Alunos/MatricularAlunoEmMateria", new StringContent(JsonConvert.SerializeObject(itens), System.Text.Encoding.UTF8, "application/json"));
             request.Wait();
             var result = request.Result.Content.ReadAsStringAsync();
+            result.Wait();
             var resultado = JsonConvert.DeserializeObject<PadraoResult<Aluno>>(result.Result);
 
             if (resultado.Error)

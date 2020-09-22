@@ -33,6 +33,7 @@ namespace HBSIS.BOLETIM.Front
             var request = client.PostAsync("Login/", new StringContent(JsonConvert.SerializeObject(user), System.Text.Encoding.UTF8, "application/json"));
             request.Wait();
             var result = request.Result.Content.ReadAsStringAsync();
+            result.Wait();
             var resultado = JsonConvert.DeserializeObject<PadraoResult<Usuario>>(result.Result);
 
             if (!resultado.Error)

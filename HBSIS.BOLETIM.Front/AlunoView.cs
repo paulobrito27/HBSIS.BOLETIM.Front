@@ -42,6 +42,7 @@ namespace HBSIS.BOLETIM.Front
             var request = client.PostAsync("Alunos/ListarNotaAluno", new StringContent(JsonConvert.SerializeObject(usuario), System.Text.Encoding.UTF8, "application/json"));
             request.Wait();
             var result = request.Result.Content.ReadAsStringAsync();
+            result.Wait();
             var resultado = JsonConvert.DeserializeObject<PadraoResult<AlunoMateria>>(result.Result);
 
             if (!resultado.Error)

@@ -41,6 +41,7 @@ namespace HBSIS.BOLETIM.Front.Adiministrador
             var request = client.PostAsync("Alunos/Cadastrar", new StringContent(JsonConvert.SerializeObject(aluno), System.Text.Encoding.UTF8, "application/json"));
             request.Wait();
             var result = request.Result.Content.ReadAsStringAsync();
+            result.Wait();
             var resultado = JsonConvert.DeserializeObject<PadraoResult<Aluno>>(result.Result);
 
             if (resultado.Error)

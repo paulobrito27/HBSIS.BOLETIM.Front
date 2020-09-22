@@ -49,6 +49,7 @@ namespace HBSIS.BOLETIM.Front
                     var request = client.PostAsync("Alunos/AtribuirNotaAluno", new StringContent(JsonConvert.SerializeObject(dados), System.Text.Encoding.UTF8, "application/json"));
                     request.Wait();
                     var result = request.Result.Content.ReadAsStringAsync();
+                    result.Wait();
                     var resultado = JsonConvert.DeserializeObject<PadraoResult<Curso>>(result.Result);
 
                     if (resultado.Error)
@@ -114,6 +115,7 @@ namespace HBSIS.BOLETIM.Front
                 var request2 = client2.GetAsync("Alunos");
                 request2.Wait();
                 var result2 = request2.Result.Content.ReadAsStringAsync();
+                result2.Wait();
                 var resultado2 = JsonConvert.DeserializeObject<PadraoResult<Aluno>>(result2.Result);
 
                 if (!resultado2.Error)
